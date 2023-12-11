@@ -11,12 +11,11 @@ if ($articles === null) {
 
 // Parcourir les CDs
 foreach ($liste_articles['cds'] as $cd) {
-    echo "ID: {$cd['id']}<br>";
-    echo "Genre: {$cd['genre']}<br>";
-    echo "Title: {$cd['title']}<br>";
-    echo "Artist: {$cd['artist']}<br>";
-    echo "Price: {$cd['price']}<br>";
-    echo "Image: {$cd['image']}<br>";
-    echo "<hr>";
+    print("p");
+    print("<a href=''>{$cd['genre']}<br></a>");
+    print("<a href=''>{$cd['title']}<br></a>");
+    print("<a href=''>{$cd['artist']}<br></a>");
+    print("<a href=''>{$cd['genre']}<br></a>");
+    print("<a href=''>{$cd['price']}<br></a>");
 }
 ?>
