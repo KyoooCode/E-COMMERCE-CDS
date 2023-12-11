@@ -1,0 +1,10 @@
+{
+  "utilisateur": [
+    {
+      "id": 1,
+      "pseudo": "admin",
+      "email": "admin@mail.fr",
+      "mdp": "admin"
+    }
+  ]
+}
