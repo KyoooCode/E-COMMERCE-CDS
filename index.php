@@ -4,12 +4,10 @@ $json_file = "articles.json";
 $articles = file_get_contents($json_file);
 $liste_articles = json_decode($articles, true);
 
-// Vérifier si la conversion a réussi
 if ($liste_articles === null) {
     die('Erreur de décodage JSON');
 }
 
-// Parcourir les CDs et générer les liens avec les cartes
 foreach ($liste_articles['cds'] as $cd) {
     echo '<a href="page_produit.php?id=' . $cd['id'] . '" class="cd-link">';
     echo '<div class="cd-card">';

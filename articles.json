@@ -6,7 +6,7 @@
       "title": "Back in Black",
       "artist": "AC/DC",
       "price": 14.99,
-      "image": "back_in_black.jpg"
+      "image": "back_in_black.png"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "title": "Thriller",
       "artist": "Michael Jackson",
       "price": 12.99,
-      "image": "thriller.jpg"
+      "image": "thriller.png"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "title": "The Marshall Mathers LP",
       "artist": "Eminem",
       "price": 16.99,
-      "image": "marshall_mathers_lp.jpg"
+      "image": "marshall_mathers_lp.png"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "title": "Moonlight Sonata",
       "artist": "Ludwig van Beethoven",
       "price": 10.99,
-      "image": "moonlight_sonata.jpg"
+      "image": "moonlight_sonata.png"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "title": "Kind of Blue",
       "artist": "Miles Davis",
       "price": 18.99,
-      "image": "kind_of_blue.jpg"
+      "image": "kind_of_blue.png"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "title": "Fearless",
       "artist": "Taylor Swift",
       "price": 13.99,
-      "image": "fearless.jpg"
+      "image": "fearless.png"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "title": "Random Access Memories",
       "artist": "Daft Punk",
       "price": 15.99,
-      "image": "random_access_memories.jpg"
+      "image": "random_access_memories.png"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "title": "Legend",
       "artist": "Bob Marley",
       "price": 11.99,
-      "image": "legend.jpg"
+      "image": "legend.png"
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "title": "The Best of Muddy Waters",
       "artist": "Muddy Waters",
       "price": 17.99,
-      "image": "muddy_waters.jpg"
+      "image": "muddy_waters.png"
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "title": "Back to Black",
       "artist": "Amy Winehouse",
       "price": 14.99,
-      "image": "back_to_black.jpg"
+      "image": "back_to_black.png"
     }
   ]
 }
