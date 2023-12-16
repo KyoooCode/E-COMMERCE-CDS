@@ -1,26 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les Produits</title>
+</head>
+<body>
+
+<h1>Tous les Produits</h1>
+
 <?php
+$servername = "lakartxela.iutbayonne.univ-pau.fr:3306";
+$username = "amoreno011_bd";
+$password = "amoreno011_bd";
+$dbname = "amoreno011_bd";
 
-$json_file = "articles.json";
-$articles = file_get_contents($json_file);
-$liste_articles = json_decode($articles, true);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($liste_articles === null) {
-    die('Erreur de décodage JSON');
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-foreach ($liste_articles['cds'] as $cd) {
-    echo '<a href="page_produit.php?id=' . $cd['id'] . '" class="cd-link">';
-    echo '<div class="cd-card">';
-    echo '<img src="Images/' . $cd['image'] . '" alt="' . $cd['title'] . '">';
-    echo '<h3>' . $cd['title'] . '</h3>';
-    echo '<p>Genre: ' . $cd['genre'] . '</p>';
-    echo '<p>Artist: ' . $cd['artist'] . '</p>';
-    echo '<p>Price: $' . $cd['price'] . '</p>';
-    echo '</div>';
-    echo '</a>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
+$sql = "SELECT genre, libelle, artiste, prix, chemin FROM PRODUIT";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table border='1'><tr><th>Genre</th><th>Libellé</th><th>Artiste</th><th>Prix</th><th>Image</th></tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["genre"] . "</td><td>" . $row["libelle"] . "</td><td>" . $row["artiste"] . "</td><td>" . $row["prix"] . "</td><td><img src='Images/" . $row["chemin"] . "' alt='Image du produit' width='150' ></td></tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "Aucun résultat trouvé.";
 }
+
+$conn->close();
 ?>
+
+<p><a href="connexion.html">Connexion</a></p>
+
+</body>
+</html>

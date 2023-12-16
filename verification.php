@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Si les identifiants correspondent, rediriger vers la page de gestion
-        header("Location: _gestion.html");
+        header("Location: gestion.html");
         exit();
     } else {
         // Si les identifiants ne correspondent pas, rediriger vers la page d'erreur
-        header("Location: _IdIncorrects.html");
+        header("Location: IdIncorrects.html");
         exit();
     }
 
