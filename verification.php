@@ -1,4 +1,7 @@
 <?php
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les identifiants du formulaire
     $username = $_POST["username"];
@@ -26,12 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Si les identifiants correspondent, rediriger vers la page de gestion
-        header("Location: gestion.html");
+        session_start();
+        $_SESSION['login'] = $username;
+        $_SESSION['pwd'] = $password;
+        header("Location: gestion.php");
         exit();
     } else {
         // Si les identifiants ne correspondent pas, rediriger vers la page d'erreur
-        header("Location: IdIncorrects.html");
-        exit();
+        print("Vous vous êtes trompé d'indentifiant !");
+        print "<br><a href='connexion.html'>Retour</a>";
     }
 
     // Fermer la connexion à la base de données

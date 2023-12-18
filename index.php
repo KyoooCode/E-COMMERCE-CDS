@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+        header('location: gestion.php');
+        die;
+    }
+
+    if(!isset($_SESSION['panier'])){
+        $_SESSION['panier'] = array();
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

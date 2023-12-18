@@ -1,4 +1,11 @@
 <?php
+    session_start();
+
+    if(!(isset($_SESSION['login']) && isset($_SESSION['pwd']))) {
+        header('location: index.php');
+        die;
+    }
+
 // Connexion à la base de données
 $servername = "lakartxela.iutbayonne.univ-pau.fr:3306";
 $dbUsername = "amoreno011_bd";
@@ -27,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_modifier"])) {
         $prix_modif = $row["prix"];
 
         // Rediriger vers la page d'affichage des informations du produit
-        header("Location: modifier_produit_info.html?id_modifier=$id_modifier&genre=$genre_modif&libelle=$libelle_modif&artiste=$artiste_modif&prix=$prix_modif");
+        header("Location: modifier_produit_info.php?id_modifier=$id_modifier&genre=$genre_modif&libelle=$libelle_modif&artiste=$artiste_modif&prix=$prix_modif");
         exit();
     }
 }
