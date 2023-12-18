@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <body>
 
 <h1>Tous les Produits</h1>
-
+<p><a href="connexion.html">Connexion</a></p>
 <?php
 $servername = "lakartxela.iutbayonne.univ-pau.fr:3306";
 $username = "amoreno011_bd";
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<p><a href="connexion.html">Connexion</a></p>
+
 
 </body>
 </html>
