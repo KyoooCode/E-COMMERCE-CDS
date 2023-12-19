@@ -2,7 +2,7 @@
     session_start();
 
     if(!(isset($_SESSION['login']) && isset($_SESSION['pwd']))) {
-        header('location: index.php');
+        header('location: connexion.php');
         die;
     }
 ?>
@@ -19,9 +19,9 @@
 <h2>Page de Gestion</h2>
 
 <!-- Liens hypertextes pour les actions -->
-<a href="deconnexion.php">Deconnexion</a><br>
-<a href="ajouter_produit.html">Ajouter un Produit</a><br>
-<a href="modifier_produit.php">Modifier un Produit</a><br>
+<a href="deconnexion.php">Déconnexion</a><br>
+<a href="ajouter_produit.php">Ajouter un produit</a><br>
+<a href="modifier_produit.php">Modifier ou supprimer un produit</a><br>
 
 </body>
 </html>

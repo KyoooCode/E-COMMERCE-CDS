@@ -30,18 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO PRODUIT (genre, libelle, artiste, prix, chemin) VALUES ('$genre', '$libelle', '$artiste', '$prix', '$chemin')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Produit ajouté avec succès !";
-            // Ajouter des liens vers la page gestion
-            echo "<br><a href='gestion.html'>Aller à la page Gestion</a>";
-            echo "<br><a href='ajouter_produit.html'>Ajouter un autre produit</a>";
-            echo "<br><a href='modifier_produit.php'>Modifier un produit</a>";
-            echo "<br><a href='index.php'>Se déconnecter</a>";
+            echo "<br>Produit ajouté avec succès !";
         } else {
             echo "Erreur lors de l'ajout du produit : " . $conn->error;
         }
     } else {
         echo "Erreur lors du téléchargement du fichier.";
     }
+
+    // Ajouter des liens vers la page gestion
+    echo "<br><a href='gestion.php'>Aller à la page de gestion</a>";
+    echo "<br><a href='ajouter_produit.php'>Ajouter un autre produit</a>";
+    echo "<br><a href='modifier_produit.php'>Modifier ou supprimer un produit</a>";
+    echo "<br><a href='deconnexion.php'>Se déconnecter</a>";
 
     // Fermer la connexion à la base de données
     $conn->close();

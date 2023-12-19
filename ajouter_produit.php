@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if(!(isset($_SESSION['login']) && isset($_SESSION['pwd']))) {
+        header('location: connexion.php');
+        die;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,6 +36,6 @@
 
     <input type="submit" value="Ajouter">
 </form>
-
+<p><a href="gestion.php">Annuler</a></p>
 </body>
 </html>

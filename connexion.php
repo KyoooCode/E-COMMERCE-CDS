@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+        header('location: gestion.php');
+        die;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +17,6 @@
 </head>
 <body>
   <h2>Connexion</h2>
-  <p>Nom d'utilisateur ou mot de passe incorrect(s).</p>
   <form action="verification.php" method="post">
     <label for="username">Nom d'utilisateur:</label>
     <input type="text" id="username" name="username" required><br>
@@ -17,5 +26,6 @@
 
     <input type="submit" value="Se connecter">
   </form>
+  <p><br><a href="index.php">Annuler</a></p>
 </body>
 </html>

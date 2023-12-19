@@ -1,7 +1,4 @@
 <?php
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les identifiants du formulaire
     $username = $_POST["username"];
@@ -16,12 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbName);
 
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connexion impossible: " . $conn->connect_error);
     }
-
-    // Prévenir les attaques par injection SQL
-    $username = mysqli_real_escape_string($conn, $username);
-    $password = mysqli_real_escape_string($conn, $password);
 
     // Requête pour vérifier les identifiants dans la base de données
     $sql = "SELECT * FROM UTILISATEUR WHERE login = '$username' AND mdp = '$password'";
@@ -35,9 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: gestion.php");
         exit();
     } else {
-        // Si les identifiants ne correspondent pas, rediriger vers la page d'erreur
-        print("Vous vous êtes trompé d'indentifiant !");
-        print "<br><a href='connexion.html'>Retour</a>";
+        // Si les identifiants ne correspondent pas, rediriger vers une page d'erreur
+        print("Identifiant ou mot de passe incorrect(s)");
+        print "<br><a href='connexion.php'>Réessayer</a>";
+        print "<br><a href='index.php'>Annuler</a>";
     }
 
     // Fermer la connexion à la base de données
